@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Weather Information</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color:#555; /* Màu cam */
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    header {
+      background-color: #3498db; /* Màu xanh dương */
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      font-size: 36px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 80%;
+    }
+
+    #weather-info {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      border: 1px solid #ccc;
+      padding: 20px;
+      border-radius: 10px;
+      width: 80%;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    #weather-info div {
+      text-align: left;
+    }
+
+    h2 {
+      color: #e74c3c; /* Màu đỏ */
+      margin-top: 0;
+      font-size: 24px;
+    }
+
+    p {
+      margin: 5px 0;
+      color: #555;
+    }
+
+    span {
+      font-weight: bold;
+      color: #333;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    #weather-info {
+      animation: fadeIn 1s ease-in-out;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  Weather Forecaster
+</header>
+
+<div id="weather-info">
+  <div>
+    <h2>Thời tiết sau 1 giờ nữa </h2>
+    <p><i class="fas fa-thermometer-half"></i> Nhiệt độ: {{weather.[0].air_temperature}} <span id="temperature"></span>&deg;C</p>
+    <p><i class="fas fa-tint"></i> Độ ẩm: {{weather.[0].humidity}} <span id="humidity"></span>%</p>
+  </div>
+  <div>
+    <h2>&nbsp;</h2>
+    <p><i class="fas fa-cloud-showers-heavy"></i> Lượng mưa: {{weather.[0].interval_rain}}<span id="rainfall"></span> mm</p>
+    <p><i class="fas fa-cloud-rain"></i> Loại mưa: {{weather.[0].rain_type}} <span id="rain-type"></span></p>
+  </div>
+  <div>
+    <h2>&nbsp;</h2>
+    <p><i class="fas fa-tachometer-alt"></i> Áp suất khí quyển: {{weather.[0].barometric_pressure}}<span id="pressure"></span> hPa</p>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+  // Mô phỏng dữ liệu thời tiết (các giá trị có thể được thay đổi tùy thuộc vào nguồn dữ liệu thực tế)
+  {{!-- var weatherData = {
+    temperature: 25,
+    humidity: 70,
+    rainfall: 5,
+    rainType: "Nhỏ",
+    pressure: 1015
+  }; --}}
+
+  // Hiển thị dữ liệu thời tiết trong DOM
+  /*function displayWeatherInfo() {
+    $("#temperature").text(weatherData.temperature);
+    $("#humidity").text(weatherData.humidity);
+    $("#rainfall").text(weatherData.rainfall);
+    $("#rain-type").text(weatherData.rainType);
+    $("#pressure").text(weatherData.pressure);
+  }*/
+
+  // Gọi hàm hiển thị thông tin thời tiết khi trang được tải
+  /*$(document).ready(function () {
+    displayWeatherInfo();
+  });*/
+</script>
+
+</body>
+</html>
